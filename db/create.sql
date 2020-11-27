@@ -16,7 +16,7 @@ INSERT INTO 'classes' VALUES (1,'Avenger'),(2,'Barbarian'),(3,'Bard'),
                             (8,'Invoker'),(9,'Monk'),(10,'Paladin'),(11,'Ranger'),
                             (12,'Rouge'),(13,'Runepriest'),(14,'Sorcerer'),(15,'Swordmage'),
                             (16,'Warlock'),(17,'Wizard');
-                            
+
 INSERT INTO 'names' VALUES (1, 'Alvyn'),(2, 'Amber'),(3, 'Ander'),
                             (4, 'Arveene'), (5, 'Astorio'), (6, 'Balama'),
                             (7, 'Basha'), (8, 'Chant'), (9, 'Chen'),
