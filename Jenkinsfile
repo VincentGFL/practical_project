@@ -1,18 +1,17 @@
 pipeline{
         agent any
         environment {
-        USER_CREDENTIALS = credentials('docker-hub-credentials')
+            DB_URI=${DB_URI}
+            KEY=${KEY}
             }
         stages{
         stage('Ansible'){
                 steps{
-                    sh "chmod +x -R ${env.WORKSPACE}"
                     sh "./scripts/ansible.sh"
                 }
             }
 	    stage('Test'){
                 steps{
-                    sh "chmod +x -R ${env.WORKSPACE}"
                     sh "./scripts/test.sh"
                 }
             }
@@ -25,7 +24,6 @@ pipeline{
             }
 	    stage('Deploy'){
                 steps{
-		            sh "chmod +x -R ${env.WORKSPACE}"
                     sh "./scripts/deploy.sh"
                 }
             }
