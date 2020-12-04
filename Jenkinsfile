@@ -1,6 +1,12 @@
 pipeline{
         agent any
         stages{
+        stage('Ansible'){
+                steps{
+                    sh "chmod +x -R ${env.WORKSPACE}"
+                    sh "./scripts/ansible.sh"
+                }
+            }
 	    stage('Test'){
                 steps{
                     sh "chmod +x -R ${env.WORKSPACE}"
