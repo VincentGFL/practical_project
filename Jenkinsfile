@@ -1,8 +1,8 @@
 pipeline{
         agent any
         environment {
-            DB_URI="${DB_URI}"
-            KEY="${KEY}"
+            DB_URI = "${DB_URI}"
+            KEY = "${KEY}"
             }
         stages{
         stage('Ansible'){
@@ -19,6 +19,7 @@ pipeline{
             }
             stage('Build'){
                 steps{
+                    withEnv(["DB_URI=${DB_URI}", "KEY=${KEY}"])
                     withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', passwordVariable: 'dockerp', usernameVariable: 'dockeru')]) {
                     sh "chmod +x -R ${env.WORKSPACE}"
                     sh "./scripts/build.sh"
