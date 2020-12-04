@@ -18,10 +18,11 @@ pipeline{
             }
             stage('Build'){
                 steps{
-		            sh "chmod +x -R ${env.WORKSPACE}"
+                    withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', passwordVariable: 'dockerp', usernameVariable: 'dockeru')]) {
+                    sh "chmod +x -R ${env.WORKSPACE}"
+                    sh "docker login -u $dockeru -p $dockerp"
                     sh "./scripts/build.sh"
-                    
-                
+                    }
                 }
             }
 	    stage('Deploy'){
