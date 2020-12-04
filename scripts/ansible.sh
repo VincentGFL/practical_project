@@ -1,5 +1,5 @@
 #! /bin/bash
-. ~/.bashrc
-
+sudo apt update
+sudo apt install -y ansible
 cd ansible
-ansible-playbook -v -i inventory playbook.yaml 
+ansible-playbook -i inventory playbook.yaml 
