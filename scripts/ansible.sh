@@ -1,4 +1,7 @@
 #! /bin/bash
-ansible --version
+. ~/.bashrc
 
-home/jenkins/.local/bin/ansible-playbook ansible-playbook -i inventory playbook.yaml 
+
+pwd
+
+/home/jenkins/.local/bin/ansible-playbook -v -i inventory playbook.yaml
