@@ -1,5 +1,5 @@
 - name: "Check if Swarm has already been Initialized"
-  docker_swarm:
+  community.general.docker_swarm:
     state: present
 
 - name: "Get swarm info"
