@@ -1,0 +1,7 @@
+- name: "Check if Swarm has already been Initialized"
+  community.general.docker_swarm:
+    state: present
+
+- name: "Get swarm info"
+  community.general.docker_swarm_info:
+  register: swarm_info
