@@ -1,8 +1,7 @@
 #! /bin/bash
 
-env DB_URI=${DB_URI}
-env KEY=${KEY}
-docker login -u $dockeru -p $dockerp
 
-sudo docker-compose build
-sudo docker-compose push
+
+
+env DB_URI=${DB_URI} env KEY=${KEY} sudo docker-compose build
+docker login -u $dockeru -p $dockerp sudo docker-compose push
