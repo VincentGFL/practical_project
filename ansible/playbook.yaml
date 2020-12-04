@@ -5,7 +5,7 @@
   - common
   - manager
 
-- hosts: workers
+- hosts: worker
   become: true
   roles:
   - common
