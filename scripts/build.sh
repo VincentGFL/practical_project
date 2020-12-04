@@ -1,5 +1,7 @@
 #! /bin/bash
-sh "export DB_URI=${DB_URI}"
-sh "export KEY=${KEY}"
+
+export DB_URI=${DB_URI}
+export KEY=${KEY}
+docker login -u $dockeru -p $dockerp
 sudo docker-compose build
 sudo docker-compose push
