@@ -1,8 +1,8 @@
 pipeline{
         agent any
         environment {
-            DB_URI=${DB_URI}
-            KEY=${KEY}
+            DB_URI="${DB_URI}"
+            KEY="${KEY}"
             }
         stages{
         stage('Ansible'){
