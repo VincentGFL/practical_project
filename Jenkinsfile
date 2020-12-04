@@ -21,6 +21,8 @@ pipeline{
                     withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', passwordVariable: 'dockerp', usernameVariable: 'dockeru')]) {
                     sh "chmod +x -R ${env.WORKSPACE}"
                     sh "docker login -u $dockeru -p $dockerp"
+                    sh "export DB_URI=${DB_URI}"
+                    sh "export KEY=${KEY}"
                     sh "./scripts/build.sh"
                     }
                 }
