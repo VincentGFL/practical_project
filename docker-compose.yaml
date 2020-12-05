@@ -22,6 +22,9 @@ services:
       build: ./classgen
       deploy:
         replicas: 2
+      environment:
+      - DB_URI=${DB_URI}
+      - KEY=${KEY}
       ports:
       - target: 5001
         protocol: tcp
@@ -31,6 +34,9 @@ services:
       build: ./namegen
       deploy:
         replicas: 2
+      environment:
+      - DB_URI=${DB_URI}
+      - KEY=${KEY}
       ports:
       - target: 5002
         protocol: tcp
