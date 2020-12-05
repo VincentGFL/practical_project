@@ -14,7 +14,7 @@ class TestResponse(TestBase):
     def test_frontend_response(self):
         with patch("requests.get") as g:
             with patch("requests.post") as p:
-                g.return_value.text = "Avenger"
+                g.return_value.text = "Avenger Mei"
                 p.return_value.text = "20"
-                response = self.client.get(url_for("index", data="Avenger Mei"))
+                response = self.client.get(url_for("index"))
                 self.assertEqual(response.status_code, 200) 

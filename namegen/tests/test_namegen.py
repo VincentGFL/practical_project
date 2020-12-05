@@ -9,6 +9,8 @@ class TestBase(TestCase):
 
 class TestResponse(TestBase):
     def test_name_response(self):
+        with patch('requests.get') as c:
+            c.return_value.text = "mei"
            
-        response = self.client.get(url_for("namegen"))
-        self.assertEqual(response.status_code, 200)  
+            response = self.client.get(url_for("namegen"))
+            self.assertEqual(response.status_code, 200)  
