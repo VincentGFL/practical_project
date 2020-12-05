@@ -20,8 +20,8 @@ services:
       deploy:
         replicas: 2
       environment:
-      - DB_URI=${DB_URI}
-      - KEY=${KEY}
+      - DB_URI="$DB_URI"
+      - KEY="$KEY"
       ports:
       - target: 5001
         protocol: tcp
@@ -32,8 +32,8 @@ services:
       deploy:
         replicas: 2
       environment:
-      - DB_URI=${DB_URI}
-      - KEY=${KEY}
+      - DB_URI="$DB_URI"
+      - KEY="$KEY"
       ports:
       - target: 5002
         protocol: tcp
