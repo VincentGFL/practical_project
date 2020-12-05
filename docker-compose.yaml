@@ -10,8 +10,8 @@ services:
         published: 5000
         protocol: tcp
       environment:
-      - DATABASE_URI=${DB_URI}
-      - SECRET_KEY=${KEY}
+      - DB_URI=${DB_URI}
+      - KEY=${KEY}
       depends_on:
       - "classgen"
       - "namegen"
