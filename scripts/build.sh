@@ -7,4 +7,5 @@
 sudo docker-compose down --rmi all
 sudo docker-compose build
 
-
+export DB_URI=$JDB_URI
+export KEY=$KEY2
