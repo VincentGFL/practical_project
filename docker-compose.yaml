@@ -9,9 +9,6 @@ services:
       - target: 5000
         published: 5000
         protocol: tcp
-      environment:
-      - DB_URI=${DB_URI}
-      - KEY=${KEY}
       depends_on:
       - "classgen"
       - "namegen"
