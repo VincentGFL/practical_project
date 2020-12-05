@@ -27,7 +27,7 @@ services:
         protocol: tcp
 
     namegen:
-      image: namegenimage:latest      
+      image: vlin303/namegenimage:latest      
       build: ./namegen
       deploy:
         replicas: 2
@@ -36,7 +36,7 @@ services:
         protocol: tcp
 
     healthgen:
-      image: healthgenimage:latest      
+      image: vlin303/healthgenimage:latest      
       build: ./healthgen
       deploy:
         replicas: 2
