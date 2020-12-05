@@ -1,8 +1,9 @@
 #! /bin/bash
 
 ssh jenkins@manager << EOF
+export DBURI=$JDB_URI
 echo "======================="
-echo ${DB_URI}
+echo $DB_URI
 echo "======================="
 git clone https://github.com/VincentGFL/practical_project.git
 cd practical_project
