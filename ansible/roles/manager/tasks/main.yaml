@@ -5,3 +5,8 @@
 - name: "Get swarm info"
   community.general.docker_swarm_info:
   register: swarm_info
+
+- name: "Get a join token"
+  add_host:
+    name: "token"
+    value: "{{ swarm_info['swarm_facts']['JoinTokens']['worker'] }}"

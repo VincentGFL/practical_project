@@ -1,5 +1,6 @@
 #! /bin/bash
 cd practical_project
+
 docker build -t testing-image -f testing/Dockerfile .
 docker run -it -d --name testing-container testing-image
 
