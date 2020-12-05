@@ -13,7 +13,8 @@ pipeline{
         }
 	    stage('Test'){
             steps{
-                
+                sh "export DB_URI=${JDB_URI}"
+                sh "export KEY=${KEY2}"
                 sh "chmod +x -R ${env.WORKSPACE}"
                 sh "./scripts/test.sh"
                 
@@ -38,7 +39,8 @@ pipeline{
         }
 	    stage('Deploy'){
             steps{
-           
+                sh "export DB_URI=${JDB_URI}"
+                sh "export KEY=${KEY2}"
                 sh "chmod +x -R ${env.WORKSPACE}"
                 sh "./scripts/deploy.sh"
                 
