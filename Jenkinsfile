@@ -13,7 +13,7 @@ pipeline{
         }
 	    stage('Test'){
             steps{
-                withEnv(['DB_URI=${DB_URI}', 'KEY=${KEY}']){
+                withEnv([DB_URI='${DB_URI}', KEY='${KEY}']){
                 sh "chmod +x -R ${env.WORKSPACE}"
                 sh "./scripts/test.sh"
                 }
