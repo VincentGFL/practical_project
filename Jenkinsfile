@@ -1,8 +1,8 @@
 pipeline{
         agent any
         environment {
-            DB_URI = "${DB_URI}"
-            KEY = "${KEY}"
+            DB_URI = '${DB_URI}'
+            KEY = '${KEY}'
             }
         stages{
         stage('Ansible'){
@@ -13,7 +13,7 @@ pipeline{
         }
 	    stage('Test'){
             steps{
-                withEnv(["DB_URI=${DB_URI}", "KEY=${KEY}"]){
+                withEnv(['DB_URI=${DB_URI}', 'KEY=${KEY}']){
                 sh "chmod +x -R ${env.WORKSPACE}"
                 sh "./scripts/test.sh"
                 }
@@ -21,7 +21,7 @@ pipeline{
         }
         stage('Build'){
             steps{
-                withEnv(["DB_URI=${DB_URI}", "KEY=${KEY}"]){
+                withEnv(['DB_URI=${DB_URI}', 'KEY=${KEY}']){
                 sh "chmod +x -R ${env.WORKSPACE}"
                 sh "./scripts/build.sh"
                 }
