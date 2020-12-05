@@ -1,7 +1,7 @@
 version: "3.3"
 services:
     frontend:
-      image: frontendimage:latest
+      image: vlin303/frontendimage:latest
       build: ./frontend
       deploy:
         replicas: 2
@@ -18,7 +18,7 @@ services:
       - "healthgen"
 
     classgen:
-      image: classgenimage:latest      
+      image: vlin303/classgenimage:latest      
       build: ./classgen
       deploy:
         replicas: 2
