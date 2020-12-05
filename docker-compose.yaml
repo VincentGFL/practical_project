@@ -14,9 +14,6 @@ services:
         replicas: 1
 
     frontend:
-      environment:
-      - DB_URI=${JDB_URI}
-      - KEY=${KEY2}
       image: vlin303/frontendimage:latest
       build: ./frontend
       deploy:
@@ -30,9 +27,6 @@ services:
       - "healthgen"
 
     classgen:
-      environment:
-      - DB_URI=${JDB_URI}
-      - KEY=${KEY2}
       image: vlin303/classgenimage:latest      
       build: ./classgen
       deploy:
@@ -42,9 +36,6 @@ services:
         protocol: tcp
 
     namegen:
-      environment:
-      - DB_URI=${JDB_URI}
-      - KEY=${KEY2}
       image: vlin303/namegenimage:latest      
       build: ./namegen
       deploy:

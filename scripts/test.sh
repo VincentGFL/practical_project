@@ -6,6 +6,7 @@ docker run -it -d --name testing-container testing-image
 
 export DB_URI=${JDB_URI}
 export KEY=${KEY2}
+echo $KEY
 
 docker exec testing-container pytest ./frontend --cov ./application
 docker exec testing-container pytest ./classgen --cov ./application
