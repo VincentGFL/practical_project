@@ -13,8 +13,8 @@ services:
 
     frontend:
       environment:
-      - DB_URI=${JDB_URI}
-      - KEY=${KEY2}
+      - DB_URI=${DB_URI}
+      - KEY=${KEY}
       image: vlin303/frontendimage:latest
       build: ./frontend
       deploy:
@@ -30,8 +30,8 @@ services:
 
     classgen:
       environment:
-      - DB_URI=${JDB_URI}
-      - KEY=${KEY2}
+      - DB_URI=${DB_URI}
+      - KEY=${KEY}
       image: vlin303/classgenimage:latest      
       build: ./classgen
       deploy:
@@ -43,8 +43,8 @@ services:
 
     namegen:
       environment:
-      - DB_URI=${JDB_URI}
-      - KEY=${KEY2}
+      - DB_URI=${DB_URI}
+      - KEY=${KEY}
       image: vlin303/namegenimage:latest      
       build: ./namegen
       deploy:
