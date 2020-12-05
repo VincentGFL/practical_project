@@ -13,10 +13,10 @@ pipeline{
         }
 	    stage('Test'){
             steps{
-                sh "export DB_URI=${DB_URI}"
-                sh "export KEY=${KEY}"
+                withEnv(["DB_URI=${DB_URI}", "KEY=${KEY}"]){
                 sh "chmod +x -R ${env.WORKSPACE}"
                 sh "./scripts/test.sh"
+                }
             }
         }
         stage('Build'){
