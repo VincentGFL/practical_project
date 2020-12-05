@@ -17,12 +17,19 @@ pipeline{
                     sh "./scripts/test.sh"
                 }
             }
-            stage('Build'){
+        stage('Build'){
+            steps{
+                withEnv(["DB_URI=${DB_URI}", "KEY=${KEY}"]){
+                sh "chmod +x -R ${env.WORKSPACE}"
+                sh "./scripts/build.sh"
+                }
+            }
+        }
+        stage('Push'){
                 steps{
-                    withEnv(["DB_URI=${DB_URI}", "KEY=${KEY}"])
                     withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', passwordVariable: 'dockerp', usernameVariable: 'dockeru')]) {
                     sh "chmod +x -R ${env.WORKSPACE}"
-                    sh "./scripts/build.sh"
+                    sh "./scripts/push.sh"
                     }
                 }
             }
