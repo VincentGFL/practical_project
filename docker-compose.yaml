@@ -11,16 +11,18 @@ services:
         source: ./nginx/nginx.conf
         target: /etc/nginx/nginx.conf
       deploy:
-        replicas: 1
+      replicas: 2
 
     frontend:
+      environment:
+      - DB_URI=${JDB_URI}
+      - KEY=${KEY2}
       image: vlin303/frontendimage:latest
       build: ./frontend
       deploy:
         replicas: 2
       ports:
       - target: 5000
-        published: 5000
         protocol: tcp
       depends_on:
       - "classgen"
@@ -28,6 +30,9 @@ services:
       - "healthgen"
 
     classgen:
+      environment:
+      - DB_URI=${JDB_URI}
+      - KEY=${KEY2}
       image: vlin303/classgenimage:latest      
       build: ./classgen
       deploy:
@@ -37,6 +42,9 @@ services:
         protocol: tcp
 
     namegen:
+      environment:
+      - DB_URI=${JDB_URI}
+      - KEY=${KEY2}
       image: vlin303/namegenimage:latest      
       build: ./namegen
       deploy:
