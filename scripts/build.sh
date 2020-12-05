@@ -2,7 +2,7 @@
 
 
 #env DB_URI=${DB_URI} env KEY=${KEY} 
-export DB_URI=${JDB_URI}
-export KEY=${KEY2}
+export DB_URI=${DB_URI}
+export KEY=${KEY}
 sudo docker-compose down --rmi all
-sudo docker-compose build
+env DB_URI=${DB_URI} env KEY=${KEY} sudo docker-compose build
