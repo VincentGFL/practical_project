@@ -7,6 +7,7 @@ pipeline{
         stages{
         stage('Ansible'){
             steps{
+                sh "chmod +x -R ${env.WORKSPACE}"
                 sh "./scripts/ansible.sh"
             }
         }
