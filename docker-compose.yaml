@@ -1,6 +1,9 @@
-version: "3.3"
+version: "3.8"
 services:
     frontend:
+      environment:
+      - DB_URI="$DB_URI"
+      - KEY="$KEY"
       image: vlin303/frontendimage:latest
       build: ./frontend
       deploy:
@@ -15,25 +18,25 @@ services:
       - "healthgen"
 
     classgen:
+      environment:
+      - DB_URI="$DB_URI"
+      - KEY="$KEY"
       image: vlin303/classgenimage:latest      
       build: ./classgen
       deploy:
         replicas: 2
-      environment:
-      - DB_URI="$DB_URI"
-      - KEY="$KEY"
       ports:
       - target: 5001
         protocol: tcp
 
     namegen:
+      environment:
+      - DB_URI="$DB_URI"
+      - KEY="$KEY"
       image: vlin303/namegenimage:latest      
       build: ./namegen
       deploy:
         replicas: 2
-      environment:
-      - DB_URI="$DB_URI"
-      - KEY="$KEY"
       ports:
       - target: 5002
         protocol: tcp
@@ -57,9 +60,5 @@ services:
     #  - type: bind
     #    source: ./nginx/nginx.conf
     #    target: ./nginx/nginx.conf
-    #  depends_on:
-    #  - "classgen"
-    #  - "namegen"
-    #  - "healthgen"
-    #  - "frontend"
+
     
