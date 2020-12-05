@@ -2,6 +2,8 @@ version: "3.8"
 services:
     nginx:
       image: nginx:latest
+      deploy:
+        replicas: 2
       ports:
       - target: 80
         published: 80
@@ -9,8 +11,8 @@ services:
       volumes:
       - type: bind
         source: ./nginx/nginx.conf
-        target: ./nginx/nginx.conf
-        
+        target: /etc/nginx/nginx.conf
+
     frontend:
       environment:
       - DB_URI="$DB_URI"
