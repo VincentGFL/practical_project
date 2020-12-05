@@ -1,4 +1,8 @@
 #! /bin/bash
 
-#ssh jenkins@manager
+ssh jenkins@manager << EOF
+
+git clone https://github.com/VincentGFL/practical_project.git
 docker stack deploy --compose-file docker-compose.yaml generatorstack
+
+EOF
