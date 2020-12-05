@@ -9,4 +9,4 @@
 - name: "Get a join token"
   add_host:
     name: "token"
-    value: "{{ swarm_info['swarm_facts']['JoinTokens']['worker'] }}"
+    value: "{{ swarm_info['swarm_facts']['JoinTokens']['Worker'] }}"
