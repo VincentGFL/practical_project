@@ -13,8 +13,8 @@ services:
 
     frontend:
       environment:
-        DB_URI = ${DB_URI}
-        KEY = ${KEY}
+      - DB_URI=${DB_URI}
+      - KEY=${KEY}
       image: vlin303/frontendimage:latest
       build: ./frontend
       deploy:
@@ -29,8 +29,8 @@ services:
 
     classgen:
       environment:
-        DB_URI = ${DB_URI}
-        KEY = ${KEY}
+      - DB_URI=${DB_URI}
+      - KEY=${KEY}
       image: vlin303/classgenimage:latest      
       build: ./classgen
       deploy:
@@ -41,8 +41,8 @@ services:
 
     namegen:
       environment:
-        DB_URI = ${DB_URI}
-        KEY = ${KEY}
+      - DB_URI=${DB_URI}
+      - KEY=${KEY}
       image: vlin303/namegenimage:latest      
       build: ./namegen
       deploy:
@@ -59,21 +59,4 @@ services:
       ports:
       - target: 5003
         protocol: tcp
-    
-    database:
-      environment: 
-        MYSQL_ROOT_PASSWORD: ROOT_PASS
-        MYSQL_DATABASE: gen
-      image: vlin303/mysql:5.7
-      ports:
-      - target: 3306
-        published: 3306
-      volumes: 
-        - type: volume
-          source: database-volume
-          target: /var/lib/mysql
-
-volumes: 
-  database-volume:
-
     
