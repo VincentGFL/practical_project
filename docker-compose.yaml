@@ -2,8 +2,6 @@ version: "3.8"
 services:
     nginx:
       image: nginx:latest
-      deploy:
-        replicas: 2
       ports:
       - target: 80
         published: 80
@@ -23,7 +21,6 @@ services:
         replicas: 2
       ports:
       - target: 5000
-        published: 5000
         protocol: tcp
       depends_on:
       - "classgen"
