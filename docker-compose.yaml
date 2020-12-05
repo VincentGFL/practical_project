@@ -23,6 +23,7 @@ services:
         replicas: 2
       ports:
       - target: 5000
+        published: 5000
         protocol: tcp
       depends_on:
       - "classgen"
@@ -39,6 +40,7 @@ services:
         replicas: 2
       ports:
       - target: 5001
+        published: 5001
         protocol: tcp
 
     namegen:
@@ -51,6 +53,7 @@ services:
         replicas: 2
       ports:
       - target: 5002
+        published: 5002
         protocol: tcp
 
     healthgen:
@@ -60,5 +63,6 @@ services:
         replicas: 2
       ports:
       - target: 5003
+        published: 5003
         protocol: tcp
     
