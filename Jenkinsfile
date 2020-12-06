@@ -9,29 +9,25 @@ pipeline{
         }
 	    stage('Test'){
             steps{
-                sh "chmod +x -R ${env.WORKSPACE}"
-                sh "./scripts/test.sh"
+                sh "bash ./scripts/test.sh"
                 
             }
         }
         stage('Build'){
             steps{
-                sh "chmod +x -R ${env.WORKSPACE}"
-                sh "./scripts/build.sh"
+                sh "bash ./scripts/build.sh"
             }
         }
         stage('Push'){
             steps{
                 withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', passwordVariable: 'dockerp', usernameVariable: 'dockeru')]) {
-                sh "chmod +x -R ${env.WORKSPACE}"
-                sh "./scripts/push.sh"
+                sh "bash ./scripts/push.sh"
                 }
             }
         }
 	    stage('Deploy'){
             steps{
-                sh "chmod +x -R ${env.WORKSPACE}"
-                sh "./scripts/deploy.sh"
+                sh "bash ./scripts/deploy.sh"
             }
         }
     }
