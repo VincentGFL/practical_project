@@ -8,6 +8,9 @@ services:
     - target: 80
       published: 80
       protocol: tcp
+    environment:
+    - DB_URI=${DB_URI}
+    - KEY=${KEY}
     volumes:
     - type: bind
       source: ./nginx/nginx.conf
