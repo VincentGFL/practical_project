@@ -7,7 +7,6 @@ services:
       replicas: 2
     ports:
     - target: 5000
-      published: 5000
       protocol: tcp
     depends_on:
     - "classgen"
@@ -22,7 +21,6 @@ services:
     - DB_URI=${DB_URI}
     ports:
     - target: 5001
-      published: 5001
       protocol: tcp
   namegen:
     image: vlin303/namegenimage:latest      
@@ -33,7 +31,6 @@ services:
     - DB_URI=${DB_URI}
     ports:
     - target: 5002
-      published: 5002
       protocol: tcp
   healthgen:
     image: vlin303/healthgenimage:latest      
@@ -42,5 +39,4 @@ services:
       replicas: 2
     ports:
     - target: 5003
-      published: 5003
       protocol: tcp
