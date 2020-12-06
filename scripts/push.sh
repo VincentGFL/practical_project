@@ -2,4 +2,4 @@
 
 docker login -u $dockeru -p $dockerp 
 docker-compose push
-#docker image prune -a -f
+docker image prune -a -f
