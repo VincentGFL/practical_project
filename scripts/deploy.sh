@@ -11,6 +11,6 @@ echo ${DB_URI}
 echo "====================="
 git clone https://github.com/VincentGFL/practical_project.git
 cd practical_project
-env $(cat .env | grep ^[A-Z] | xargs) docker stack deploy --compose-file docker-compose.yaml generatorstack
+env $(DB_URI) docker stack deploy --compose-file docker-compose.yaml generatorstack
 EOF
 
