@@ -11,6 +11,14 @@ services:
         source: ./nginx/nginx.conf
         target: /etc/nginx/nginx.conf
 
+    database:
+      image: mysql:5.7
+      ports:
+      - target: 3306
+      environment:
+      - DB_URI="${DB_URI}"
+      - KEY="${KEY}"
+      
     frontend:
       environment:
       - DB_URI=${DB_URI}
