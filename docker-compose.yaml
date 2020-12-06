@@ -1,5 +1,19 @@
 version: "3.7"
 services:
+  nginx:
+    image: kirankalsi/nginx:latest
+    deploy:
+      replicas: 2
+    ports:
+    - target: 80
+      published: 80
+      protocol: tcp
+    volumes:
+    - type: bind
+      source: ./nginx/nginx.conf
+      target: /etc/nginx/nginx.conf
+    depends_on:
+    - "frontend"
   frontend:
     image: vlin303/frontendimage:latest
     build: ./frontend
@@ -7,7 +21,6 @@ services:
       replicas: 2
     ports:
     - target: 5000
-      published: 5000
       protocol: tcp
     depends_on:
     - "classgen"
@@ -20,7 +33,6 @@ services:
       replicas: 2
     ports:
     - target: 5001
-      published: 5001
       protocol: tcp
   namegen:
     image: vlin303/namegenimage:latest      
@@ -29,7 +41,6 @@ services:
       replicas: 2
     ports:
     - target: 5002
-      published: 5002
       protocol: tcp
   healthgen:
     image: vlin303/healthgenimage:latest      
@@ -38,5 +49,4 @@ services:
       replicas: 2
     ports:
     - target: 5003
-      published: 5003
       protocol: tcp
