@@ -4,7 +4,7 @@ pipeline{
         stage('Ansible'){
             steps{
                 
-                sh "./scripts/ansible.sh"
+                sh "bash ./scripts/ansible.sh"
             }
         }
 	    stage('Test'){
