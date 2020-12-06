@@ -63,22 +63,4 @@ services:
       - target: 5003
         published: 5003
         protocol: tcp
-
-    database: 
-      image: mysql:5.7
-      deploy:
-          replicas: 1
-      ports:
-      - target: 3306
-        published: 3306
-      environment:
-        MYSQL_ROOT_PASSWORD: ${ROOT_PASS}
-        MYSQL_DATABASE: gen
-      volumes:
-      - type: volume
-        source: database-volume
-        target: /var/lib/mysql
-
-volumes:
-  database-volume: 
     
