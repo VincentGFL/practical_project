@@ -6,4 +6,5 @@ COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 COPY . .
 EXPOSE 5003
-ENTRYPOINT ["gunicorn","-workers=2", "-b", "0.0.0.0:5003", "app:app"]
+ENTRYPOINT ["python", "app.py"]
+#ENTRYPOINT ["gunicorn","-workers=2", "-b", "0.0.0.0:5003", "app:app"]
