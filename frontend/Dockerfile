@@ -1,6 +1,4 @@
 FROM python:3.7
-#ENV DB_URI=${DB_URI}
-#ENV KEY=${KEY}
 WORKDIR /frontend
 RUN apt-get update && apt-get install -y python3-pip
 COPY ./requirements.txt .

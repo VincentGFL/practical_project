@@ -1,25 +1,10 @@
 version: "3.7"
 services:
-  nginx:
-    image: nginx:alpine
-    ports:
-    - target: 80
-      published: 80
-      protocol: tcp
-    volumes:
-    - type: bind
-      source: ./nginx/nginx.conf
-      target: /etc/nginx/nginx.conf
-    depends_on:
-    - "frontend"
-    
   frontend:
     image: vlin303/frontendimage:latest
     build: ./frontend
     deploy:
       replicas: 2
-    environment:
-    - DB_URI=${DB_URI}
     ports:
     - target: 5000
       published: 5000
@@ -28,7 +13,6 @@ services:
     - "classgen"
     - "namegen"
     - "healthgen"
-
   classgen:
     image: vlin303/classgenimage:latest      
     build: ./classgen
@@ -40,7 +24,6 @@ services:
     - target: 5001
       published: 5001
       protocol: tcp
-
   namegen:
     image: vlin303/namegenimage:latest      
     build: ./namegen
@@ -52,7 +35,6 @@ services:
     - target: 5002
       published: 5002
       protocol: tcp
-
   healthgen:
     image: vlin303/healthgenimage:latest      
     build: ./healthgen
