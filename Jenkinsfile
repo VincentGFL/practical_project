@@ -3,8 +3,8 @@ pipeline{
         stages{
         stage('Ansible'){
             steps{
-                
                 sh "bash ./scripts/ansible.sh"
+                
             }
         }
 	    stage('Test'){
