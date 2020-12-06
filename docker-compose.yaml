@@ -44,6 +44,8 @@ services:
       build: ./namegen
       deploy:
         replicas: 2
+      environment:
+      - DB_URI=${DB_URI}
       ports:
       - target: 5002
         published: 5002
