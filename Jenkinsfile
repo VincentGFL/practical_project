@@ -3,6 +3,7 @@ pipeline{
         environment {
             DB_URI = '${DB_URI}'
             KEY = '${KEY}'
+            RPASS = '${ROOT_PASS}'
             }
         stages{
         stage('Ansible'){
