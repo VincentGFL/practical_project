@@ -12,22 +12,12 @@ services:
         target: /etc/nginx/nginx.conf
       depends_on:
       - "frontend"
-
-    database:
-      image: mysql:5.7
-      ports:
-      - target: 3306
-      environment:
-      - DB_URI="${DB_URI}"
-      - KEY="${KEY}"
       
     frontend:
       image: vlin303/frontendimage:latest
       build: ./frontend
       deploy:
         replicas: 2
-      environment:
-      - DB_URI=${DB_URI}
       ports:
       - target: 5000
         published: 5000
@@ -54,8 +44,6 @@ services:
       build: ./namegen
       deploy:
         replicas: 2
-      environment:
-      - DB_URI=${DB_URI}
       ports:
       - target: 5002
         published: 5002
