@@ -4,6 +4,7 @@
 #export KEY=${KEY}
 ssh jenkins@manager << EOF
 git clone https://github.com/VincentGFL/practical_project.git
+git pull
 cd practical_project
 
 #docker stack rm generatorstack 
