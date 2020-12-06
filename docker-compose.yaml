@@ -10,6 +10,8 @@ services:
       - type: bind
         source: ./nginx/nginx.conf
         target: /etc/nginx/nginx.conf
+      depends_on:
+      - "frontend"
 
     database:
       image: mysql:5.7
@@ -20,12 +22,12 @@ services:
       - KEY="${KEY}"
       
     frontend:
-      environment:
-      - DB_URI=${DB_URI}
       image: vlin303/frontendimage:latest
       build: ./frontend
       deploy:
         replicas: 2
+      environment:
+      - DB_URI=${DB_URI}
       ports:
       - target: 5000
         published: 5000
@@ -36,24 +38,24 @@ services:
       - "healthgen"
 
     classgen:
-      environment:
-      - DB_URI=${DB_URI}
       image: vlin303/classgenimage:latest      
       build: ./classgen
       deploy:
         replicas: 2
+      environment:
+      - DB_URI=${DB_URI}
       ports:
       - target: 5001
         published: 5001
         protocol: tcp
 
     namegen:
-      environment:
-      - DB_URI=${DB_URI}
       image: vlin303/namegenimage:latest      
       build: ./namegen
       deploy:
         replicas: 2
+      environment:
+      - DB_URI=${DB_URI}
       ports:
       - target: 5002
         published: 5002
