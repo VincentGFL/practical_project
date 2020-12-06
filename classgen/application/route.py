@@ -10,5 +10,5 @@ def classgen():
     rows = Classes.query.count() #Total Number of rows
     randomid = randint(1, rows) #Generate random number 1 - number of rows
     pickoneclass = Classes.query.filter_by(id=randomid).first() #Pick one row depends on the randomid
-    return Response(str(pickoneclass.classnames), mimetype='text/plain')
+    return Response(str(pickoneclass.classnames), mimetype='application/json')
     
