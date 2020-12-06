@@ -10,5 +10,5 @@ def namegen():
     rows = Names.query.count() #Total Number of rows
     randomid = randint(1, rows) #Generate random number 1 - number of rows
     pickonename = Names.query.get(randomid) #Pick one row depends on the randomid
-    return Response(str(pickonename.names), mimetype='application/json')
+    return Response(str(pickonename.names), mimetype='text/plain')
     

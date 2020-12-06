@@ -8,6 +8,6 @@ def index():
     names = requests.get("http://namegen:5002/namegen")
 
     character = str(classes.text) + " " + str(names.text)
-    health = requests.post('http://healthgen:5003/healthgen', data=character)
+    health = requests.post('http://healthgen:5003/healthgen', json=character)
 
     return render_template('home.html', character=character, health=health.text)
