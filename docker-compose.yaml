@@ -7,6 +7,7 @@ services:
       replicas: 2
     ports:
     - target: 5000
+      published: 5000
       protocol: tcp
     depends_on:
     - "classgen"
