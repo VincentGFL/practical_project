@@ -1,5 +1,5 @@
 FROM python:3.7
-ENV DB_URI=${DB_URI}
+#ENV DB_URI=${DB_URI}
 #ENV KEY=${KEY}
 WORKDIR /namegen
 COPY ./requirements.txt .
