@@ -1,7 +1,11 @@
 version: "3.7"
 services:
   nginx:
+<<<<<<< HEAD
     image: nginx:alpine
+=======
+    image: nginx:latest
+>>>>>>> 95f7e1e5ad93058148a7d7d44c8c441db09bb4ae
     deploy:
       replicas: 2
     ports:
