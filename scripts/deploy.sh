@@ -17,6 +17,6 @@ docker pull vlin303/healthgen:latest
 
 git clone https://github.com/VincentGFL/practical_project.git
 cd practical_project
-env ${DB_URI} docker stack deploy --compose-file docker-compose.yaml generatorstack
+docker stack deploy -e ${DB_URI} --compose-file docker-compose.yaml generatorstack
 EOF
 
