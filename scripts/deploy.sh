@@ -6,7 +6,7 @@ ssh jenkins@manager << EOF
 git clone https://github.com/VincentGFL/practical_project.git
 cd practical_project
 
-docker stack rm generatorstack 
+#docker stack rm generatorstack 
 docker pull vlin303/frontendimage:latest
 docker pull vlin303/classgenimage:latest
 docker pull vlin303/namegenimage:latest

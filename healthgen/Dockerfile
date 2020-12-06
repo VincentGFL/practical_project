@@ -7,5 +7,5 @@ COPY ./requirements.txt .
 RUN pip3 install -r requirements.txt
 COPY . .
 EXPOSE 5003
-#ENTRYPOINT ["/usr/local/bin/python3", "app.py"]
-ENTRYPOINT ["gunicorn","-w", "2", "-b", "0.0.0.0:5003", "app:app"]
+ENTRYPOINT ["/usr/local/bin/python3", "app.py"]
+#ENTRYPOINT ["gunicorn","-w", "2", "-b", "0.0.0.0:5003", "app:app"]
