@@ -10,7 +10,10 @@ exit
 EOF
 
 ssh jenkins@worker << EOF
+
 export DB_URI="$DB_URI"
 export KEY="$KEY"
+echo $KEY
+echo $DB_URI
 
 EOF
