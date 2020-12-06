@@ -4,11 +4,6 @@
 #export KEY=${KEY}
 ssh jenkins@manager << EOF
 
-export DB_URI=${DB_URI}
-export KEY=${KEY}
-echo "====================="
-echo ${DB_URI}
-echo "====================="
 docker stack rm generatorstack 
 docker pull vlin303/frontendimage:latest
 docker pull vlin303/classgenimage:latest
