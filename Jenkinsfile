@@ -16,10 +16,8 @@ pipeline{
         }
         stage('Build'){
             steps{
-                withEnv(['DB_URI=${DB_URI}', 'KEY=${KEY}']){
                 sh "chmod +x -R ${env.WORKSPACE}"
                 sh "./scripts/build.sh"
-                }
             }
         }
         stage('Push'){
@@ -32,10 +30,8 @@ pipeline{
         }
 	    stage('Deploy'){
             steps{
-                withEnv(['DB_URI=${DB_URI}', 'KEY=${KEY}']){
                 sh "chmod +x -R ${env.WORKSPACE}"
                 sh "./scripts/deploy.sh"
-                }
             }
         }
     }
