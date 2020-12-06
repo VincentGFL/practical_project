@@ -1,6 +1,6 @@
 FROM python:3.7
-ENV DB_URI=${JDB_URI}
-ENV KEY=${KEY2}
+ENV DB_URI=${DB_URI}
+ENV KEY=${KEY}
 WORKDIR /frontend
 COPY ./requirements.txt .
 RUN pip install -r requirements.txt
