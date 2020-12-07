@@ -103,7 +103,7 @@ In this section I will be going over the architecture of this project:
 First is the database, it is a simple data table with no relation. The main role for this database is to hold classes and names which later will be pulled at random by service 2 and service 3 of the application.
 
 #### Jenkins Pipeline
-![CIpipeline](https://i.imgur.com/ZnTAs9C.png)
+![CIpipeline](https://i.imgur.com/7X91JU2.png)
 This is the flow diagram of the CI Pipeline how each stage is flown to the next stage. The Pipeline starts off with the Github repository receiving a new commit which then triggers the webhook and pulls the newer version from Git hub into Jenkins and start the building process with Ansible being first setting out the roles for easy node then the application gets tested with Unit Testing. Once the testing is done, images is then being built and pushed onto Docker Hub which later on can be pulled back down and deployed with Swarm. While this is processing the current version of the application will still be in service for users.
 
 #### Services
