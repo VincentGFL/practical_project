@@ -28,9 +28,8 @@ pipeline{
         }
 	    stage('Deploy'){
             steps{
-                withEnv(['DB_URI=${DB_URI}, KEY=${KEY}']) {
+                
                 sh "bash ./scripts/deploy.sh"
-                }
             }
         }
     }
