@@ -1,19 +1,5 @@
 version: "3.7"
 services:
-  nginx:
-    image: nginx:alpine
-    deploy:
-      replicas: 2
-    ports:
-    - target: 80
-      published: 80
-      protocol: tcp
-    volumes:
-    - type: bind
-      source: ./nginx/nginx.conf
-      target: /etc/nginx/nginx.conf
-    depends_on:
-    - "frontend"
   frontend:
     image: vlin303/frontendimage:latest
     build: ./frontend
