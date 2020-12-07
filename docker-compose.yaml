@@ -35,6 +35,8 @@ services:
     ports:
     - target: 5001
       protocol: tcp
+    environment:
+    - DB_URI=${DB_URI}
   namegen:
     image: vlin303/namegenimage:latest      
     build: ./namegen
