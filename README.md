@@ -136,11 +136,15 @@ The Unit Testing is taken from the Jenkins Pipeline testing section, most of the
 ![Service4](https://i.imgur.com/RUmStuI.png)
 
 ## Application Design
+![FrontEnd](https://i.imgur.com/M6mnE5X.png)
+The final product web front shows the title, randomly generated character consisde of the class and name. The Health Point returns depends on the lenght of the character name that is generated. If the number is even then the value is doubled while odd number remains the same.
 
 ## Improvements
-- Need to fix the not 100% Unit testing result
-- Give the ability to store random generated Character name into database and save it
+* Need to fix the not 100% Unit testing result
+* Give the ability to store random generated Character name into database and save it
+
 ## Issues
+* Cloud services' IP address can change and cause the application to stop working
 
 ## Acknowledgment 
 Thanks to my tutors during my time at the academy teaching and supporting me throughout the project
