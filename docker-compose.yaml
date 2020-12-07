@@ -36,6 +36,9 @@ services:
     - target: 5001
       published: 5001
       protocol: tcp
+    environment:
+    - DB_URI=${DB_URI}
+    - KEY=${KEY}
   namegen:
     image: vlin303/namegenimage:latest      
     build: ./namegen
@@ -45,6 +48,9 @@ services:
     - target: 5002
       published: 5002
       protocol: tcp
+    environment:
+    - DB_URI=${DB_URI}
+    - KEY=${KEY}
   healthgen:
     image: vlin303/healthgenimage:latest      
     build: ./healthgen
