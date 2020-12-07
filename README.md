@@ -2,23 +2,24 @@
 
 ## Resources
 
-**Presentation:** 
+**Presentation:** https://docs.google.com/presentation/d/1ADI0XlC4Z669n8CBjME6JFnS0PbqH1RxaVxTfFuX7hI/edit?usp=sharing
 
 **Trello:** https://trello.com/b/J1zIyMyO/devops-core-practical-project
 
 **Website:** http://34.105.167.64/
 
 ## Content Page
-* Brief
-* Tools
-* Project Planning
-* Entity Relationship Diagram
-* CI/CD Pipeline
-* Risk Assessment
-* Testing
-* Application Design
-* Improvements
-* Issues
+* [Brief](#brief)
+* [Tools](#tools)
+* [Project Planning](#project-planning)
+* [Project Diagram](#project-diagram)
+* [CI/CD Pipeline](#ci/cd-pipeline)
+* [Risk Assessment](#risk-assessment)
+* [Testing](#testing)
+* [Application Design](#application-design)
+* [Improvements](#improvements)
+* [Issues](#issues)
+* [Acknowledgment](#acknowledgment)
 
 ## Brief
 I have been tasked to create a simple random generator application consist of 4 services communicating with each other. Service 1 will be served as the front end of the application while service 2 and service 3 will generate random strings which later will be combined together for service 4 to return a value depending on the content of service 2 + service 3 given to service 4. This application will be built, tested and configurated automatically using Jenkins Pipeline and Docker Swarm with deploy it with multiple workers hosting the web application. Nginx will also be used as a load balancer between all the workers. 
@@ -133,6 +134,8 @@ The Unit Testing is taken from the Jenkins Pipeline testing section, most of the
 
 #### Service 4
 ![Service4](https://i.imgur.com/RUmStuI.png)
+
+## Application Design
 
 ## Improvements
 - Need to fix the not 100% Unit testing result
