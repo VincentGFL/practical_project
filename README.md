@@ -77,12 +77,12 @@ Trello is free and easy to use. The block system makes project tracking easy and
 
 
 ## Project Planning
-![EarlyTrello](https://i.imgur.com/7vyqHuT.png)
+![EarlyTrello](https://i.imgur.com/Cch1Ybr.png)
 Just like the previous project during week 6 of the QA Training, I used Trello as my project tracking tool due to the user-friendly, organisation and the portability as my focus of choosing this. The trello board will be used to track all the tasks that I need to do, working on or completed. As well as any additional resource links like Github Repository. Link can be found below.
 
 [Trello Board](https://trello.com/b/J1zIyMyO/devops-core-practical-project)
 
-![AfterTrello](https://i.imgur.com/Cch1Ybr.png)
+![AfterTrello](https://i.imgur.com/7vyqHuT.png)
 
 **Resources** - This section contains links to Git Hub Repo and Risk Assessment making easy access to files and all the elements can be found in the Trello.
 
