@@ -6,7 +6,7 @@ cd practical_project
 git pull
 
 
-docker stack rm generatorstack 
+#docker stack rm generatorstack 
 docker pull vlin303/frontendimage:latest
 docker pull vlin303/classgenimage:latest
 docker pull vlin303/namegenimage:latest
