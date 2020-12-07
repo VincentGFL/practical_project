@@ -8,6 +8,9 @@ services:
     - target: 80
       published: 80
       protocol: tcp
+    environment:
+    - DB_URI=${DB_URI}
+    - KEY=${KEY}
     volumes:
     - type: bind
       source: ./nginx/nginx.conf
@@ -21,7 +24,6 @@ services:
       replicas: 2
     ports:
     - target: 5000
-      published: 5000
       protocol: tcp
     depends_on:
     - "classgen"
@@ -35,8 +37,6 @@ services:
     ports:
     - target: 5001
       protocol: tcp
-    environment:
-    - DB_URI=${DB_URI}
   namegen:
     image: vlin303/namegenimage:latest      
     build: ./namegen
